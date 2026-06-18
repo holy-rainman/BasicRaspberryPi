@@ -24,6 +24,7 @@ try:
    p1.start(laju)			# set speed for M1 at 100%
    p2.start(laju)			# set speed for M2 at 100%
    sleep(2)				#delay for 2 second
+	  
    print ("Forward")
    GPIO.output(DIG1, GPIO.LOW)          # set DIG1 as LOW, to control direction
    GPIO.output(DIG2, GPIO.LOW)          # set DIG2 as LOW, to control direction
