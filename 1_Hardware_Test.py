@@ -16,7 +16,7 @@ relay1 = LED(20)     # Relay1 connected to GPIO20
 relay2 = LED(21)     # Relay2 connected to GPIO21
 
 # Inputs
-push_button = Button(13)                 # Push Button on GPIO26
+push_button = Button(6)                 # Push Button on GPIO26
 ir_sensor = Button(19, pull_up=True)     # IR Sensor on GPIO19 (pull-up)
 
 # --------------------------------------------------
