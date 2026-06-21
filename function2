@@ -1,0 +1,16 @@
+let count = Number(msg.payload);
+
+// Counter 0-4
+if (count >= 0 && count <= 4) {
+    msg.payload = 0;
+    return msg;
+}
+
+// Counter 5-9
+if (count >= 5 && count <= 9) {
+    msg.payload = 1;
+    return msg;
+}
+
+// Ignore anything else
+return null;
