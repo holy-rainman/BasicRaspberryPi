@@ -1,0 +1,7 @@
+if (Number(msg.payload) === 0) {
+    msg.payload = 1;   // LED ON
+} else {
+    msg.payload = 0;   // LED OFF
+}
+
+return msg;
