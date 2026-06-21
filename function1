@@ -1,0 +1,35 @@
+// Get previous GPIO state
+let prevState = context.get('prevState') || 0;
+
+// Counter starts at 0 whenever Node-RED restarts
+let counter = context.get('counter') || 0;
+
+// Current GPIO value
+let currentState = Number(msg.payload);
+
+// Detect Rising Edge (0 -> 1)
+if (prevState === 0 && currentState === 1) {
+
+    counter++;
+
+    // Reset to 0 when counter reaches 10
+    if (counter >= 10) {
+        counter = 0;
+    }
+
+    context.set('counter', counter);
+
+    // Output counter value
+    msg.payload = counter;
+
+    // Save current state
+    context.set('prevState', currentState);
+
+    return msg;
+}
+
+// Save current state
+context.set('prevState', currentState);
+
+// No output if no rising edge
+return null;
